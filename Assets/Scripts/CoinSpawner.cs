@@ -14,6 +14,11 @@ public class CoinSpawner : MonoBehaviour
 
     private void Awake()
     {
+        SpawnCoins();
+    }
+
+    private void SpawnCoins()
+    {
         for (int i = 0; i < coinAmount; i++)
         {
             var go = Instantiate<GameObject>(prefab);
@@ -25,5 +30,4 @@ public class CoinSpawner : MonoBehaviour
             go.transform.position = new Vector3(x, y, z);
         }
     }
-
 }
