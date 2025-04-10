@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class WeaponBehaviour : MonoBehaviour
 {
-
+    private int shootForce;
     public Transform shootOrigin;
 
     private void Update()
     {
-        Debug.DrawRay(shootOrigin.position, shootOrigin.forward * 1000, Color.red);
+        Debug.DrawRay(shootOrigin.position, shootOrigin.forward * shootForce, Color.red);
 
         if (Input.GetMouseButtonDown(0))
         {
