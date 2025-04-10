@@ -29,14 +29,18 @@ public class MoveBehaviour : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             // Rotate left
-            playerRigidbody.MoveRotation(Quaternion.Euler(transform.localRotation.eulerAngles + Vector3.up * rotateSpeed * Time.deltaTime * -1));
+            RotatePlayer(-1);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             // Rotate right
-            playerRigidbody.MoveRotation(Quaternion.Euler(transform.localRotation.eulerAngles + Vector3.up * rotateSpeed * Time.deltaTime * 1));
+            RotatePlayer(1);
         }
     }
 
+    private void RotatePlayer(int direction)
+    {
+        playerRigidbody.MoveRotation(Quaternion.Euler(transform.localRotation.eulerAngles + Vector3.up * rotateSpeed * Time.deltaTime * direction));
+    }
 }
