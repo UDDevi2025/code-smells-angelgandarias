@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JB : MonoBehaviour
+public class JumpBehaviour : MonoBehaviour
 {
 
     public Rigidbody playerRigidbody;
