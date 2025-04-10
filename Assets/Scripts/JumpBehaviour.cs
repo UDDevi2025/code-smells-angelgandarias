@@ -7,13 +7,13 @@ public class JumpBehaviour : MonoBehaviour
 
     public Rigidbody playerRigidbody;
 
-    private int groundCollisions;
+    private bool isGrounded;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            groundCollisions++;
+            isGrounded = true;
         }
     }
 
@@ -21,13 +21,12 @@ public class JumpBehaviour : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            groundCollisions--;
+            isGrounded = false;
         }
     }
 
     void Update()
     {
-        bool isGrounded = groundCollisions > 0;
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
