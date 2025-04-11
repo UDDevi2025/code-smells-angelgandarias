@@ -10,6 +10,7 @@ public class Checkpoint : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("Checkpoint");
+            
         }
     }
 

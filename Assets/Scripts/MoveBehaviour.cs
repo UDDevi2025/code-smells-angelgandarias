@@ -9,21 +9,24 @@ public class MoveBehaviour : MonoBehaviour
 
     public float movementSpeed;
     public float rotateSpeed;
+    private void Start()
+    {
+        playerRigidbody = GetComponent<Rigidbody>();
+    }
 
     private void Update()
     {
-        playerRigidbody = GetComponent<Rigidbody>();
 
         if (Input.GetKey(KeyCode.W))
         {
             // Move forward
-            playerRigidbody.MovePosition(transform.position + transform.forward * movementSpeed * Time.deltaTime * 1);
+            Move(1);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             // Move backward
-            playerRigidbody.MovePosition(transform.position + transform.forward * movementSpeed * Time.deltaTime * -1);
+            Move(-1);
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -37,6 +40,11 @@ public class MoveBehaviour : MonoBehaviour
             // Rotate right
             RotatePlayer(1);
         }
+    }
+
+    private void Move(int direction)
+    {
+        playerRigidbody.MovePosition(transform.position + transform.forward * movementSpeed * Time.deltaTime * direction);
     }
 
     private void RotatePlayer(int direction)

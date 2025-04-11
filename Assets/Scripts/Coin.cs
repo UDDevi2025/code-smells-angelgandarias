@@ -24,6 +24,7 @@ public class Coin : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
+            collision.gameObject.GetComponent<CoinCollector>().CollectCoin();
             DestroyCoin();
         }
     }
