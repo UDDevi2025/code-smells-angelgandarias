@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Sun : MonoBehaviour
+public class SunRotate : MonoBehaviour
 {
 
     public float rotateSpeed = 360;
